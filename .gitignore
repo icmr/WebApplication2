@@ -6,3 +6,5 @@
 /.vs/WebApplication2/v15
 /.vs/WebApplication2/DesignTimeBuild
 /WebApplication2.Tests/obj
+/WebApplication2.Tests/bin/Debug/netcoreapp2.0
+/WebApplication2/bin/Debug/netcoreapp2.0
