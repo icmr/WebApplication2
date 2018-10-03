@@ -9,7 +9,17 @@ namespace WebApplication2.Services
     {
         public bool IsPrime(int candidate)
         {
-            return false;
+            if (candidate == 1)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public string GetUserById(int id)
+        {
+            return "user lee";
         }
     }
 }

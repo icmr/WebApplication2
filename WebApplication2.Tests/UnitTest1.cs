@@ -23,6 +23,14 @@ namespace WebApplication2.Tests
 
                 Assert.IsFalse(result, "1 should not be prime");
             }
+
+            [TestMethod]
+            public void ReturnTrueGivenValueOf0()
+            {
+                var result = _userService.IsPrime(0);
+
+                Assert.IsTrue(result, "0 should be prime");
+            }
         }
     }
 }
