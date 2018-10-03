@@ -11,7 +11,7 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration) --collect "Code coverage"'
 
 # 添加测试任务 - 方法一
 #- task: DotNetCoreCLI@2
@@ -21,7 +21,7 @@ steps:
 #    arguments: '--configuration $(buildConfiguration)'
 
 # 添加测试任务 - 方法二
-- script: dotnet test WebApplication2.Tests --logger trx
+- script: dotnet test WebApplication2.Tests --logger trx --collect "Code coverage"
 - task: PublishTestResults@2
   inputs:
     testRunner: VSTest
