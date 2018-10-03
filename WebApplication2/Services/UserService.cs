@@ -9,7 +9,7 @@ namespace WebApplication2.Services
     {
         public bool IsPrime(int candidate)
         {
-            throw new NotImplementedException("Please create a test first");
+            return false;
         }
     }
 }
