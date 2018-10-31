@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using WebApplication2.Model;
 
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        public string defaultConnectionString;
+
+        public ValuesController(IOptions<ConnectionStrings> optionAccessor)
+        {
+            defaultConnectionString = optionAccessor.Value.DefaultConnection;
+        }
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2", "value3", "value4", "value5", "value6" };
+            return new string[] { "value1", "value2", "value3", "value4", "value5", "value6", defaultConnectionString };
         }
 
         // GET api/values/5
